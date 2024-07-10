@@ -22,7 +22,6 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://www.g2a.com/',
     testIdAttribute: 'data-test-id',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-all-retries',
@@ -44,7 +43,8 @@ export default defineConfig({
       name: 'chromium-pl',
       use: {
         ...devices['Desktop Chrome'],
-        baseURL: 'https://www.g2a.com/pl'
+        baseURL: 'https://www.g2a.com/pl/',
+        locale: 'pl-PL',
       },
     },
     {
