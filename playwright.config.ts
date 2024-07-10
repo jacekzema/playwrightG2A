@@ -44,7 +44,7 @@ export default defineConfig({
       name: 'chromium-pl',
       use: {
         ...devices['Desktop Chrome'],
-        baseURL: 'https://www.g2a.com/'
+        baseURL: 'https://www.g2a.com/pl'
       },
     },
     {
