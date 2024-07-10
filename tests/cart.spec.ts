@@ -11,7 +11,7 @@ test.beforeEach("Bypass bot detection script", async ({ page }) => {
    });
 });
 
-test('Check price of product', async ({ page }, testInfo) => {
+test(`Check price of product: ${textToSearch}`, async ({ page }, testInfo) => {
    const pageManager = new PageManager(page, testInfo);
    await pageManager.onMainPage().openMainPage();
    await pageManager.onMainPage().acceptCookieBanner();
