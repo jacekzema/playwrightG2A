@@ -3,7 +3,6 @@ import { PageManager } from '../pages/pageManager';
 
 const textToSearch: string = process.env.SEARCH_ITEM;
 
-// zrobić to później jako Fixture
 test.beforeEach("Bypass bot detection script", async ({ page }) => {
    await page.addInitScript("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})");
    await page.setExtraHTTPHeaders({

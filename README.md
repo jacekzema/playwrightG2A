@@ -1,6 +1,7 @@
 # playwrightG2A
 Preconditions:
     Installed node js
+    Installed docker 
     After instalation run those commands:
 
     npm install --force
@@ -27,7 +28,7 @@ Run docker container:
 
     docker run -it test-container
 
-Headded mode in docker terminal:
+Headed mode in docker terminal:
 
     xvfb-run -a SEARCH_ITEM='diablo4' npx playwright test --project chromium-global --headed
 
