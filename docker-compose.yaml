@@ -1,0 +1,12 @@
+services:
+  playwright-test:
+    image: playwright-image
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: /bin/sh -c "ls && echo 'Starting test for product $SEARCH_ITEM' && xvfb-run -a npx playwright test --project chromium-global-docker --headed && echo 'Test finished'"
+    environment:
+      SEARCH_ITEM: "${SEARCH_ITEM:-assasins}"
+    volumes:
+      - ./playwright-report/:/tests/playwright-report
+      - ./test-results/:/tests/test-results
