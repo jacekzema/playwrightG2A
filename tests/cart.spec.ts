@@ -16,8 +16,9 @@ test(`Check price of product: ${textToSearch}`, async ({ page }, testInfo) => {
    await pageManager.onMainPage().openMainPage();
    await pageManager.onMainPage().acceptCookieBanner();
    await pageManager.onMainPage().fillSearchInputAndClickSearch(textToSearch);
-   const expectedProductPrice = await pageManager.onSearchResultPage().getPriceOfFirstListItem();
    await pageManager.onSearchResultPage().clickOnFirstListItem();
-   const productPrice = await pageManager.onProductDetailsPage().getPrice();
-   expect(expectedProductPrice).toBe(productPrice);
+   const expectedProductPrice = await pageManager.onProductDetailsPage().getPrice();
+   await pageManager.onProductDetailsPage().clickAddToCart();
+   const totalProductPrice = await pageManager.onYourCartPage().getTotalPrice();
+   expect(expectedProductPrice).toBe(totalProductPrice);
 })
