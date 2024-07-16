@@ -2,7 +2,7 @@ import { Locator, Page, test, TestInfo } from "@playwright/test";
 import { BasePage } from "./basePage";
 
 export class SearchResultPage extends BasePage {
-    readonly firstSearchListItem: Locator = this.page.locator('div[class="indexes__ContentWrapper-wklrsw-109 IdwMH"] li').first();
+    readonly firstSearchListItem: Locator = this.page.locator('div[class="indexes__ContentWrapper-wklrsw-113 bPsjms"] li').first();
 
     constructor(page: Page, testInfo: TestInfo) {
         super(page, testInfo)
